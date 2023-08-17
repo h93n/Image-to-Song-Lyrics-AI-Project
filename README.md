@@ -29,7 +29,7 @@ The generated song lyrics are further transformed into audio using text-to-speec
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/h93n/image-to-song-lyrics-AI-project.git
+   git clone https://github.com/h93n/Image-to-Song-Lyrics-AI-Project.git
    ```
 
 2. Navigate to the project directory:
