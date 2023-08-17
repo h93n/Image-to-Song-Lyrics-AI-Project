@@ -35,7 +35,7 @@ The generated song lyrics are further transformed into audio using text-to-speec
 2. Navigate to the project directory:
 
    ```bash
-   cd image-to-song-lyrics-AI-project
+   cd Image-to-Song-Lyrics-AI-Project
    ```
 
 3. Install the required dependencies:
