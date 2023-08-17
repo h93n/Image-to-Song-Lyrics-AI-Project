@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Song Generator</title>
+    <style>
+        body {
+            background-image: url("https://png.pngtree.com/background/20210716/original/pngtree-concert-musical-instrument-music-background-picture-image_1349333.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: black; /* Set the font color to black */
+        }
+
+        h1 {
+            font-size: 36px; /* Increase font size for "Capture a Moment, Create a Song" */
+            margin-bottom: 20px; /* Add margin to space it from the buttons */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px; /* Add gap between buttons */
+        }
+
+        .button-container button {
+            background-color: white; /* Set the button background color to white */
+            color: black; /* Set the button text color to black */
+            padding: 10px 20px; /* Set the same padding for both buttons */
+            font-size: 18px; /* Set the same font size for both buttons */
+            width: 200px; /* Set the width of both buttons to the same value */
+        }
+    </style>
+</head>
+<body>
+    <h1>Capture a Moment, Create a Song</h1>
+    <form action="{{ url_for('generate') }}" method="post" enctype="multipart/form-data">
+        <div class="button-container">
+            <input type="file" name="image" accept="image/*">
+            <button type="submit">Generate Song</button>
+        </div>
+    </form>
+</body>
+</html>

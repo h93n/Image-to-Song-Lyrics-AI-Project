@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Song</title>
+    <style>
+        body {
+            background-image: url("https://png.pngtree.com/background/20210711/original/pngtree-simple-fresh-music-poster-background-picture-image_1097526.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-top: 80px; /* Adjust margin for title */
+            margin-bottom: 20px; /* Add margin for title */
+        }
+
+        .text {
+            flex: 1;
+            padding: 20px;
+            font-size: 11px;
+            text-align: left;
+            margin-bottom: 40px; /* Add more margin to lower the text */
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px; /* Add margin to lower the audio */
+        }
+
+        .back-button {
+            margin-top: 20px;
+            align-self: flex-end;
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: black;
+            text-decoration: none;
+            margin-bottom: 40px; /* Add more margin to lower the button */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Generated Song</h1>
+        <div class="text">
+            {% for paragraph in song_text.split('\n') %}
+                <p>{{ paragraph | safe }}</p>
+            {% endfor %}
+        </div>
+        <audio controls>
+            <source src="data:audio/mpeg;base64,{{ audio_data }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <a class="back-button" href="{{ url_for('index') }}">Go back</a>
+    </div>
+</body>
+</html>
